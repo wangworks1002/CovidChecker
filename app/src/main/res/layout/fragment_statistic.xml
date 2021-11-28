@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatisticFragment"
+    android:id="@+id/statistic_fragment"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/sta1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kasus"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kasus hari ini"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kematian"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kematian hari ini"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sembuh"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sembuh hari ini"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/sta7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/sta12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stat_case"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="kode negara"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/stat_case_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="latitude"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/stat_death"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="longitude"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/stat_death_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="longitude"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/stat_recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="longitude"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/stat_recovered_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="longitude"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
