@@ -10,7 +10,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {RoomCountry.class, RoomFavorite.class}, version = 8, exportSchema = false)
+@Database(entities = {RoomCountry.class, RoomFavorite.class, RoomGlobal.class}, version = 9, exportSchema = false)
 public abstract class CountryDatabase extends RoomDatabase {
 
     private static CountryDatabase sInstance;
@@ -21,6 +21,7 @@ public abstract class CountryDatabase extends RoomDatabase {
 
     public abstract RoomCountryDao roomCountryDao();
     public abstract RoomFavoriteDao roomFavoriteDao();
+    public abstract RoomGlobalDao roomGlobalDao();
 
     private void setDatabaseCreated(){
         mIsDatabaseCreated.postValue(true);

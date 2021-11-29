@@ -121,6 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#4CAF50"
+                    android:text="0"
                     android:textSize="24dp" />
 
             </LinearLayout>
@@ -156,6 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#F44336"
+                    android:text="0"
                     android:textSize="24dp" />
 
             </LinearLayout>

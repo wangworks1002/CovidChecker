@@ -116,7 +116,7 @@ public class FavoriteActivity extends AppCompatActivity {
         }
         pb.setVisibility(View.GONE);
         if (countryAdapterModels.isEmpty()){
-            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(), "Periksa jaringan anda, menampilkan data sebelumnya", Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(getWindow().getDecorView().getRootView(), "Belum ada negara yang anda favoritkan", Snackbar.LENGTH_SHORT);
             snackbar.show();
         }
         setRecyclerView();

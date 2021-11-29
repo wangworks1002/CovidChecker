@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.room.Transaction;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,6 +19,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.covidchecker.model.api.AllResponse;
+import com.example.covidchecker.model.room.CountryDatabase;
+import com.example.covidchecker.model.room.RoomGlobal;
 import com.example.covidchecker.retrofit.RetrofitInstanceLmao;
 import com.example.covidchecker.utils.SessionManagementUtil;
 import com.google.android.material.snackbar.Snackbar;
@@ -29,6 +32,9 @@ import retrofit2.Response;
 public class HomeActivity extends AppCompatActivity {
 
     private RetrofitInstanceLmao retrofitInstance;
+
+    //database
+    private CountryDatabase database;
 
     @Override
     public void onResume() {
@@ -65,6 +71,8 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        database = CountryDatabase.getInstance(getApplicationContext());
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Covid Apps");
@@ -113,11 +121,20 @@ public class HomeActivity extends AppCompatActivity {
                         active.setText(result.getActive()==null? "0" : String.format("%,d",result.getActive()));
                         recovered.setText(result.getRecovered()==null? "0" : String.format("%,d",result.getRecovered()));
                         death.setText(result.getDeaths()==null? "0" : String.format("%,d",result.getDeaths()));
+
+                        deleteAndInsert(result);
                     }
 
                     @Override
                     public void onFailure(Call<AllResponse> call, Throwable t) {
                         //tambah logika ambil dari database data terakhir kali diambil
+                        RoomGlobal allCases = database.roomGlobalDao().getAllCases();
+                        if (allCases != null){
+                            confirmed.setText(allCases.getCases()==null? "0" : String.format("%,d", allCases.getCases()));
+                            active.setText(allCases.getActive()==null? "0" : String.format("%,d", allCases.getActive()));
+                            recovered.setText(allCases.getCases()==null? "0" : String.format("%,d", allCases.getRecovered()));
+                            death.setText(allCases.getActive()==null? "0" : String.format("%,d", allCases.getDeaths()));
+                        }
 
                         Snackbar.make(getWindow().getDecorView().getRootView(), "Anda tidak terhubung ke internet", Snackbar.LENGTH_SHORT).show();
                     }
@@ -134,4 +151,9 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Transaction
+    void deleteAndInsert(AllResponse result){
+        database.roomGlobalDao().deleteAll();
+        database.roomGlobalDao().insertAll(new RoomGlobal(result.getCases(), result.getActive(), result.getRecovered(), result.getDeaths()));
+    }
 }
